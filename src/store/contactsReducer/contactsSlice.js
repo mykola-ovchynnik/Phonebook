@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   contacts: [],
+  isLoading: false,
+  error:null,
 };
 
 const contactsSliceReducer = createSlice({

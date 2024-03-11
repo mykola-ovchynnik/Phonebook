@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { reducer } from './reducer';
-import persistStore from 'redux-persist/es/persistStore';
 import {
   FLUSH,
   PAUSE,
@@ -20,4 +19,4 @@ export const store = configureStore({
     });
   },
 });
-export const persistor = persistStore(store);
+
