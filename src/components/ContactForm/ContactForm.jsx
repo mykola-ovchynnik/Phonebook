@@ -1,12 +1,11 @@
 import { Form, Button, Input, Label } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { isExist } from 'helpers/helpers';
-import { addContact } from 'store/contactsReducer/contactsSlice';
-import { nanoid } from '@reduxjs/toolkit';
-import { contactsSelector } from 'store/selectors';
+import { selectVisibleContacts } from 'store/selectors';
+import { addNewContactThunk } from 'store/thunk';
 
 const ContactForm = () => {
-  const contacts = useSelector(contactsSelector);
+  const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -20,8 +19,7 @@ const ContactForm = () => {
     }
 
     dispatch(
-      addContact({
-        id: nanoid(),
+      addNewContactThunk({
         name,
         number: e.target.elements.number.value,
       })

@@ -1,24 +1,27 @@
-import { deleteContact } from 'store/contactsReducer/contactsSlice.js';
 import { ContactItem, DeleteButton, List } from './ContactList.styled.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { contactsSelector, filterSelector } from 'store/selectors.js';
+import { selectVisibleContacts } from 'store/selectors.js';
+import { deleteContactThunk, getAllContactsThunk } from 'store/thunk.js';
+import { useEffect } from 'react';
 
 const ContactList = () => {
-  const contacts = useSelector(contactsSelector);
-  const filter = useSelector(filterSelector);
+  const contacts = useSelector(selectVisibleContacts);
+
   const dispatch = useDispatch();
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  useEffect(() => {
+    dispatch(getAllContactsThunk());
+  }, [dispatch]);
 
   return (
     <List>
-      {filteredContacts &&
-        filteredContacts.map(contact => (
+      {contacts &&
+        contacts.map(contact => (
           <ContactItem key={contact.id}>
-            {contact.name}: {contact.number}
-            <DeleteButton onClick={() => dispatch(deleteContact(contact.id))}>
+            {contact.name}: {contact.phone}
+            <DeleteButton
+              onClick={() => dispatch(deleteContactThunk(contact.id))}
+            >
               Delete
             </DeleteButton>
           </ContactItem>

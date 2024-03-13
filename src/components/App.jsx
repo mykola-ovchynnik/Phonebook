@@ -5,12 +5,13 @@ import {
 } from './Phonebook/Phonebook.styled';
 import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
-
 import { Filter } from './Filter/Filter';
+import Loader from './GlobalLoader/Loader';
 
 const App = () => {
   return (
     <Phonebook>
+      <Loader />
       <PhonebookHeader>Phonebook</PhonebookHeader>
       <ContactForm />
 
