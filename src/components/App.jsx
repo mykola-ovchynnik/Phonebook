@@ -1,8 +1,4 @@
-import {
-  ContactsHeader,
-  Phonebook,
-  PhonebookHeader,
-} from './Phonebook/Phonebook.styled';
+import { Header, Phonebook } from './Phonebook/Phonebook.styled';
 import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
@@ -13,10 +9,10 @@ const App = () => {
     <Phonebook>
       <GlobalLoader />
 
-      <PhonebookHeader>Phonebook</PhonebookHeader>
+      <Header>Phonebook</Header>
       <ContactForm />
 
-      <ContactsHeader>Contacts</ContactsHeader>
+      <Header>Contacts</Header>
       <Filter />
       <ContactList />
     </Phonebook>

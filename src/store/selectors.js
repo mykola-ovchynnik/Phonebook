@@ -6,12 +6,11 @@ export const filterSelector = state => state.filter;
 export const selectVisibleContacts = createSelector(
   [contactsSelector, filterSelector],
   (contacts, filter) => {
-    return (
-      contacts &&
-      contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filter.toLowerCase())
-      )
-    );
+    return contacts.length >= 0
+      ? contacts.filter(contact =>
+          contact.name.toLowerCase().includes(filter.toLowerCase())
+        )
+      : [];
   }
 );
 

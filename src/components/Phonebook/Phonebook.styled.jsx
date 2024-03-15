@@ -10,12 +10,8 @@ export const Phonebook = styled.div`
   width: 400px;
 `;
 
-export const PhonebookHeader = styled.h2`
+export const Header = styled.h2`
   margin-bottom: 10px;
-  color: #217093;
-`;
-
-export const ContactsHeader = styled.h2`
-  margin-bottom: 10px;
-  color: #217093;
+  font-size: 24px;
+  color: black;
 `;

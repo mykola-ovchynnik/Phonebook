@@ -11,8 +11,9 @@ export const Form = styled.form`
   padding: 20px;
   font-size: 16px;
   font-weight: 400;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
 `;
 
 export const Label = styled.label`
@@ -24,7 +25,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   padding: 0.5em 0.5em;
   background-color: #f3fafd;
-  border: solid 2px #4eb8dd;
+  border: 1px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
   width: 100%;

@@ -1,16 +1,32 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit';
 import { addNewContact, deleteContact, fetchAllContacts } from 'api/api';
 
-export const getAllContactsThunk = createAsyncThunk('contacts/getAll', () =>
-  fetchAllContacts()
-);
+export const getAllContactsThunk = createAsyncThunk('contacts/getAll', () => {
+  try {
+    return fetchAllContacts();
+  } catch (error) {
+    return isRejectedWithValue(error);
+  }
+});
 
 export const addNewContactThunk = createAsyncThunk(
   'contacts/addNewContact',
-  contact => addNewContact(contact)
+  contact => {
+    try {
+      return addNewContact(contact);
+    } catch (error) {
+      return isRejectedWithValue(error);
+    }
+  }
 );
 
 export const deleteContactThunk = createAsyncThunk(
   'contacts/deleteContact',
-  id => deleteContact(id)
+  id => {
+    try {
+      return deleteContact(id);
+    } catch (error) {
+      return isRejectedWithValue(error);
+    }
+  }
 );

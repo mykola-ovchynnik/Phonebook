@@ -13,7 +13,7 @@ import {
 const contactsSliceReducer = createSlice({
   name: 'contacts',
   initialState: {
-    contacts: null,
+    contacts: [],
   },
   extraReducers: builder => {
     builder
