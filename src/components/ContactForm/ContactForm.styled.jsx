@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 100%;
   background-color: #fff;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 20px;
   font-size: 16px;
   font-weight: 400;
@@ -24,11 +25,12 @@ export const Input = styled.input`
   padding: 0.5em 0.5em;
   background-color: #f3fafd;
   border: solid 2px #4eb8dd;
-  border-radius: 4px;
+  border-radius: 8px;
   box-sizing: border-box;
-  width: calc(100% - 4px);
+  width: 100%;
   height: 40px;
-  color: #353538;
+  color: #4eb8dd;
+  font-size: 16px;
   font-weight: 600;
   font-family: inherit;
   transition: box-shadow 0.2s linear, border-color 0.25s ease-out;
@@ -49,10 +51,9 @@ export const Button = styled.button`
   padding: 0.5em;
   background-color: #4eb8dd;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   box-sizing: border-box;
   box-shadow: none;
-  width: 100%;
   height: 50px;
   font-size: 1.2em;
   color: #fff;

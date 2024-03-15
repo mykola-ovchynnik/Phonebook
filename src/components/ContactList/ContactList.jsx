@@ -1,8 +1,9 @@
-import { ContactItem, DeleteButton, List } from './ContactList.styled.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'store/selectors.js';
-import { deleteContactThunk, getAllContactsThunk } from 'store/thunk.js';
 import { useEffect } from 'react';
+import { ContactListItem } from 'components/ContactItem/ContactItem.jsx';
+import { getAllContactsThunk } from 'store/thunk';
+import { List } from './ContactList.styled';
 
 const ContactList = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -17,14 +18,7 @@ const ContactList = () => {
     <List>
       {contacts &&
         contacts.map(contact => (
-          <ContactItem key={contact.id}>
-            {contact.name}: {contact.phone}
-            <DeleteButton
-              onClick={() => dispatch(deleteContactThunk(contact.id))}
-            >
-              Delete
-            </DeleteButton>
-          </ContactItem>
+          <ContactListItem key={contact.id} contact={contact} />
         ))}
     </List>
   );

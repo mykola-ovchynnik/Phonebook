@@ -10,15 +10,11 @@ import {
   handledeleteContact,
 } from './handlers';
 
-const initialState = {
-  contacts: null,
-  isLoading: false,
-  error: null,
-};
-
 const contactsSliceReducer = createSlice({
   name: 'contacts',
-  initialState,
+  initialState: {
+    contacts: null,
+  },
   extraReducers: builder => {
     builder
       .addCase(getAllContactsThunk.fulfilled, handleFulfilledContacts)

@@ -113,9 +113,9 @@ const spokeAnim = keyframes`
 `;
 
 // Styled components
-const WheelAndHamsterContainer = styled.div`
+export const WheelAndHamsterContainer = styled.div`
   --dur: 1s;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -124,7 +124,7 @@ const WheelAndHamsterContainer = styled.div`
   font-size: 14px;
 `;
 
-const Wheel = styled.div`
+export const Wheel = styled.div`
   border-radius: 50%;
   background: radial-gradient(
     100% 100% at center,
@@ -139,7 +139,7 @@ const Wheel = styled.div`
   height: 100%;
 `;
 
-const Hamster = styled.div`
+export const Hamster = styled.div`
   animation: ${hamsterAnim} var(--dur) ease-in-out infinite;
   position: absolute;
   top: 50%;
@@ -151,7 +151,7 @@ const Hamster = styled.div`
   z-index: 1;
 `;
 
-const HamsterBody = styled.div`
+export const HamsterBody = styled.div`
   animation: ${hamsterBodyAnim} var(--dur) ease-in-out infinite;
   position: relative;
   background: hsl(30, 90%, 90%);
@@ -166,7 +166,7 @@ const HamsterBody = styled.div`
   transform-style: preserve-3d;
 `;
 
-const HamsterHead = styled.div`
+export const HamsterHead = styled.div`
   animation: ${hamsterHeadAnim} var(--dur) ease-in-out infinite;
   position: absolute;
   background: hsl(30, 90%, 55%);
@@ -180,7 +180,7 @@ const HamsterHead = styled.div`
   transform-origin: 100% 50%;
 `;
 
-const HamsterEar = styled.div`
+export const HamsterEar = styled.div`
   animation: ${hamsterEarAnim} var(--dur) ease-in-out infinite;
   position: absolute;
   background: hsl(0, 90%, 85%);
@@ -193,7 +193,7 @@ const HamsterEar = styled.div`
   transform-origin: 50% 75%;
 `;
 
-const HamsterEye = styled.div`
+export const HamsterEye = styled.div`
   animation: ${hamsterEyeAnim} var(--dur) linear infinite;
   position: absolute;
   background-color: hsl(0, 0%, 0%);
@@ -204,7 +204,7 @@ const HamsterEye = styled.div`
   height: 0.5em;
 `;
 
-const HamsterNose = styled.div`
+export const HamsterNose = styled.div`
   background: hsl(0, 90%, 75%);
   border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
   position: absolute;
@@ -214,7 +214,7 @@ const HamsterNose = styled.div`
   height: 0.25em;
 `;
 
-const HamsterLimb = styled.div`
+export const HamsterLimb = styled.div`
   position: absolute;
   clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
   top: 2em;
@@ -224,19 +224,19 @@ const HamsterLimb = styled.div`
   transform-origin: 50% 0;
 `;
 
-const HamsterLimbFR = styled(HamsterLimb)`
+export const HamsterLimbFR = styled(HamsterLimb)`
   animation: ${hamsterFRLimbAnim} var(--dur) linear infinite;
   background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
   transform: rotate(15deg) translateZ(-1px);
 `;
 
-const HamsterLimbFL = styled(HamsterLimb)`
+export const HamsterLimbFL = styled(HamsterLimb)`
   animation: ${hamsterFLLimbAnim} var(--dur) linear infinite;
   background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
   transform: rotate(15deg);
 `;
 
-const HamsterTail = styled.div`
+export const HamsterTail = styled.div`
   animation: ${hamsterTailAnim} var(--dur) linear infinite;
   position: absolute;
   background: hsl(0, 90%, 85%);
@@ -250,7 +250,7 @@ const HamsterTail = styled.div`
   transform-origin: 0.25em 0.25em;
 `;
 
-const HamsterLimbBR = styled(HamsterLimb)`
+export const HamsterLimbBR = styled(HamsterLimb)`
   border-radius: 0.75em 0.75em 0 0;
   clip-path: polygon(
     0 0,
@@ -272,7 +272,7 @@ const HamsterLimbBR = styled(HamsterLimb)`
   transform: rotate(-25deg) translateZ(-1px);
 `;
 
-const HamsterLimbBL = styled(HamsterLimb)`
+export const HamsterLimbBL = styled(HamsterLimb)`
   border-radius: 0.75em 0.75em 0 0;
   clip-path: polygon(
     0 0,
@@ -294,7 +294,7 @@ const HamsterLimbBL = styled(HamsterLimb)`
   transform: rotate(-25deg);
 `;
 
-const Spoke = styled.div`
+export const Spoke = styled.div`
   animation: ${spokeAnim} var(--dur) linear infinite;
   background: radial-gradient(
       100% 100% at center,

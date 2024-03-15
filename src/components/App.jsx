@@ -6,12 +6,13 @@ import {
 import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
-import Loader from './GlobalLoader/Loader';
+import { GlobalLoader } from './GlobalLoader/GlobalLoader';
 
 const App = () => {
   return (
     <Phonebook>
-      <Loader />
+      <GlobalLoader />
+
       <PhonebookHeader>Phonebook</PhonebookHeader>
       <ContactForm />
 

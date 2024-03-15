@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 export const Phonebook = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px;
-  max-width: 300px;
+  width: 400px;
 `;
 
 export const PhonebookHeader = styled.h2`
